@@ -2,6 +2,7 @@ from typing import Any, Optional
 
 
 class Node:
+    """Класс. Объявляет головной узел списка^"""
     def __init__(self, value: Optional[Any] = None, next: Optional['Node'] = None) -> None:
         self.value = value
         self.next = next
@@ -11,6 +12,7 @@ class Node:
 
 
 class LinkedList:
+    """Класс. Работаем с узлами списка"""
     def __init__(self) -> None:
         self.head: Optional[Node] = None
         self.length = 0
@@ -26,6 +28,7 @@ class LinkedList:
         return 'LinkedList []'
 
     def append(self, element: Any) -> None:
+        """Функция. Добавляем  узел в список"""
         new_node = Node(element)
         if self.head is None:
             self.head = new_node
@@ -38,6 +41,8 @@ class LinkedList:
         self.length += 1
 
     def remove(self, index) -> None:
+        """Функция. Удаляем узел из списка"""
+
         previous_node = 0
         current_node = self.head
         current_index = 0
